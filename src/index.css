@@ -1,3 +1,11 @@
+:root {
+    --faded-1: #FBF9F3;
+    --faded-2: #89D1D9;
+    --faded-3: #8EA4AB;
+    --faded-4: #F27272;
+    --faded-5: #A66F74;
+}
+
 * {
     box-sizing: border-box;
 }
