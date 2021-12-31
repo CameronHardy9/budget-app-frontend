@@ -7,7 +7,7 @@ function Budget(props) {
     const [purchases] = useState(props.userObject.purchases);
 
     return(
-        <>
+        <div className='container'>
             <h1>Budget</h1>
             <p>${calcBudget(budget, purchases)}</p>
             <button onClick={async() => {
@@ -15,7 +15,7 @@ function Budget(props) {
                 setBudget(newBudget);
                 }}>Set Budget</button>
             <Link to="..">Back</Link>
-        </>
+        </div>
     )
 }
 
@@ -26,7 +26,7 @@ function calcBudget(budget, purchases) {
     purchases.forEach((item) => {
         spending += item.amount;
     })
-    
+
     return selectedBudget - spending;
 }
 
