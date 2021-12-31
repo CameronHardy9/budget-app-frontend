@@ -9,3 +9,38 @@
 * {
     box-sizing: border-box;
 }
+
+.faded1 {
+    background-color: var(--faded-1);
+}
+
+.faded2 {
+    background-color: var(--faded-2);
+}
+
+.faded3 {
+    background-color: var(--faded-3);
+}
+
+.faded4 {
+    background-color: var(--faded-4);
+}
+
+.faded5 {
+    background-color: var(--faded-5);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    margin: 5px 0px;
+}
