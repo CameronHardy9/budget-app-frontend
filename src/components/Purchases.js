@@ -22,7 +22,8 @@ function Purchases(props) {
             })}
             <button onClick={async () => {
                 const newDoc = await clickHandler();
-                setPurchases(newDoc);
+                props.updateUserObject(newDoc);
+                setPurchases(newDoc.purchases);
             }}>Add Purchase</button>
             <Link to="..">Back</Link>
         </div>
@@ -41,7 +42,7 @@ async function clickHandler() {
     }
 
     const newDoc = await apiHandler("PUT", body);
-    return newDoc.purchases;
+    return newDoc;
 }
 
 export default Purchases;

@@ -11,8 +11,9 @@ function Budget(props) {
             <h1>Budget</h1>
             <p>${calcBudget(budget, purchases)}</p>
             <button onClick={async() => {
-                const newBudget = await clickHandler();
-                setBudget(newBudget);
+                const newDoc = await clickHandler();
+                props.updateUserObject(newDoc);
+                setBudget(newDoc.budget);
                 }}>Set Budget</button>
             <Link to="..">Back</Link>
         </div>
@@ -33,7 +34,7 @@ function calcBudget(budget, purchases) {
 async function clickHandler() {
     const budget = Number(prompt("New budget?"));
     const newDoc = await apiHandler("PUT", {budget: budget});
-    return newDoc.budget;
+    return newDoc;
 }
 
 export default Budget;
