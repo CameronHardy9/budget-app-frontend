@@ -25,8 +25,8 @@ function App() {
         <>
             <Routes>
                 <Route path="/" element={<HomeMenu loaded={!!userObject} />} />
-                <Route path="budget" element={<Budget userObject={userObject} />} />
-                <Route path="purchases" element={<Purchases userObject={userObject} />} />
+                <Route path="budget" element={<Budget userObject={userObject} updateUserObject={updateUserObject} />} />
+                <Route path="purchases" element={<Purchases userObject={userObject} updateUserObject={updateUserObject} />} />
                 {!!userObject && userObject.purchases.map((item) => {
                     return(
                         <Route key={item.uniqid} path={item.uniqid} element={<Item userObject={userObject} item={item} updateUserObject={updateUserObject} />} />
