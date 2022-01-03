@@ -9,6 +9,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Spline Sans', sans-serif;
 }
 
 .faded1 {
@@ -31,24 +32,45 @@
     background-color: var(--faded-5);
 }
 
+.light {
+    font-weight: 300;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: 700;
+}
+
 .navBar {
-    padding: 10px;
+    padding: 10px 20px;
     border-bottom: 1px solid black; 
+    box-shadow: 0px 0px 7px 0px black;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 2;
+    margin-bottom: 20px;
 }
 
 .container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: transparent;
 }
 
 .container > a {
     text-decoration: none;
     color: black;
+    background-color: transparent;
+}
+
+.budget {
+    font-size: 25px;
 }
 
 .dataBox {
@@ -59,11 +81,22 @@
     width: 80vw;
     height: 40px;
     margin: 5px 0px;
+    border: 1px solid var(--faded-3);
     border-radius: 15px;
 }
 
 .dataBox:active {
-    box-shadow: 0px 0px 5px 5px var(--faded-3);
+    background-color: var(--faded-3);
+}
+
+.purchaseItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80vw;
+    height: 40px;
+    margin: 5px 0px;
 }
 
 .lower {
@@ -75,6 +108,23 @@
 
 .lower > button {
     margin-bottom: 10px;
+}
+
+.styledButton, .lower > a {
+    border: 1px solid black;
+    background-color: var(--faded-3);
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.styledButton > *, .lower > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;;
 }
 
 .loaderContainer {
