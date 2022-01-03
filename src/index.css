@@ -44,6 +44,14 @@
     font-weight: 700;
 }
 
+.budgetData {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+
 .navBar {
     padding: 10px 20px;
     border-bottom: 1px solid black; 
@@ -81,7 +89,7 @@
     width: 80vw;
     height: 40px;
     margin: 5px 0px;
-    border: 1px solid var(--faded-3);
+    border: 1px solid var(--faded-5);
     border-radius: 15px;
 }
 
