@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import {useState} from 'react';
 import apiHandler from '../utils/apiHandler';
+import calcBudget from '../utils/calcBudget';
 
 function Budget(props) {
     const [budget, setBudget] = useState(props.userObject.budget)
@@ -18,17 +19,6 @@ function Budget(props) {
             <Link to="..">Back</Link>
         </div>
     )
-}
-
-function calcBudget(budget, purchases) {
-    const selectedBudget = budget;
-    let spending = 0;
-
-    purchases.forEach((item) => {
-        spending += item.amount;
-    })
-
-    return selectedBudget - spending;
 }
 
 async function clickHandler() {
