@@ -8,16 +8,27 @@ function Budget(props) {
     const [purchases] = useState(props.userObject.purchases);
 
     return(
-        <div className='container'>
-            <h1>Budget</h1>
-            <p>${calcBudget(budget, purchases)}</p>
-            <button onClick={async() => {
-                const newDoc = await clickHandler();
-                props.updateUserObject(newDoc);
-                setBudget(newDoc.budget);
-                }}>Set Budget</button>
-            <Link to="..">Back</Link>
-        </div>
+        <>
+            <div className='container'>
+                <div>
+                    <h2>Set Budget</h2>
+                    <span className='budget light'>${budget}</span>
+                </div>
+                <div>
+                    <h2>Remaining Amount</h2>
+                    <span className='budget light'>${calcBudget(budget, purchases)}</span>
+                </div>
+            </div>
+            <div className="lower">
+                <button className="styledButton" onClick={async() => {
+                    const newDoc = await clickHandler();
+                    props.updateUserObject(newDoc);
+                    setBudget(newDoc.budget);
+                    }}>Set Budget
+                </button>
+                <Link to="..">Back</Link>
+            </div>
+        </>
     )
 }
 
