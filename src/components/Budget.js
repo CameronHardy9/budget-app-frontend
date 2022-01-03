@@ -33,7 +33,10 @@ function Budget(props) {
 }
 
 async function clickHandler() {
-    const budget = Number(prompt("New budget?"));
+    let budget = undefined;
+    while(!budget){
+        budget = Number(prompt("New budget?"));
+    };
     const newDoc = await apiHandler("PUT", {budget: budget});
     return newDoc;
 }

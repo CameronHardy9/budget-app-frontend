@@ -36,7 +36,10 @@ function Purchases(props) {
 
 async function clickHandler() {
     const store = prompt("Store name?");
-    const amount = Number(prompt("Purchase amount?"));
+    let amount = undefined;
+    while(!amount){
+        amount = Number(prompt("Purchase Amount?"));
+    };
     const date = new Date().toLocaleDateString("en-US").replaceAll("/","-");;
 
     const body = {
