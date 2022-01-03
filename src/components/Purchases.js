@@ -16,7 +16,7 @@ function Purchases(props) {
                             <div className={`dataBox`}>
                                 <span >{item.store}</span>
                                 <span >${item.amount}</span>
-                                <span >{item.date}</span>
+                                <span >{item.date.replaceAll('-','/')}</span>
                             </div>
                         </Link>
                     )
