@@ -5,10 +5,10 @@ function Item(props) {
     return(
         <>
             <div className="container">
-                <h1>{props.item.store}</h1>
+                <h1 className='bold'>{props.item.store}</h1>
                 <div className='purchaseItem'>
-                    <h2>${props.item.amount}</h2>
-                    <h2>{props.item.date}</h2>
+                    <h2 className='medium'>${props.item.amount}</h2>
+                    <h2 className='medium'>{props.item.date.replaceAll('-','/')}</h2>
                 </div>
             </div>
             <div className="lower">
