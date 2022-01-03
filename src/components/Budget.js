@@ -10,11 +10,11 @@ function Budget(props) {
     return(
         <>
             <div className='container'>
-                <div>
+                <div className='budgetData'>
                     <h2>Set Budget</h2>
                     <span className='budget light'>${budget}</span>
                 </div>
-                <div>
+                <div className='budgetData'>
                     <h2>Remaining Amount</h2>
                     <span className='budget light'>${calcBudget(budget, purchases)}</span>
                 </div>
