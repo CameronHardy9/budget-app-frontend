@@ -5,6 +5,7 @@ import HomeMenu from './components/HomeMenu';
 import Purchases from './components/Purchases';
 import Budget from './components/Budget';
 import Item from './components/Item';
+import NavBar from './components/NavBar';
 
 function App() {
 
@@ -23,16 +24,25 @@ function App() {
 
     return (
         <>
-            <Routes>
-                <Route path="/" element={<HomeMenu loaded={!!userObject} />} />
-                <Route path="budget" element={<Budget userObject={userObject} updateUserObject={updateUserObject} />} />
-                <Route path="purchases" element={<Purchases userObject={userObject} updateUserObject={updateUserObject} />} />
-                {!!userObject && userObject.purchases.map((item) => {
-                    return(
-                        <Route key={item.uniqid} path={item.uniqid} element={<Item userObject={userObject} item={item} updateUserObject={updateUserObject} />} />
-                    )
-                })}
-            </Routes>
+            {!!userObject ? (
+                <>
+                    <NavBar userObject={userObject}/>
+                    <Routes>
+                        <Route path="/" element={<HomeMenu />} />
+                        <Route path="budget" element={<Budget userObject={userObject} updateUserObject={updateUserObject} />} />
+                        <Route path="purchases" element={<Purchases userObject={userObject} updateUserObject={updateUserObject} />} />
+                        {!!userObject && userObject.purchases.map((item) => {
+                            return(
+                                <Route key={item.uniqid} path={item.uniqid} element={<Item userObject={userObject} item={item} updateUserObject={updateUserObject} />} />
+                            )
+                        })}
+                    </Routes>
+                </>
+            ) : (
+                <div className="loaderContainer">
+                    <div className="squareLoader"></div>
+                </div>
+            )}
         </>
     );
 }
