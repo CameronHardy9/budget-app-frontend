@@ -13,6 +13,10 @@ function Item(props) {
             </div>
             <div className="lower">
                 <button className="styledButton" onClick={async() => {
+                    const confirm = window.confirm("Delete purchase?");
+                    if(!confirm) {
+                        return;
+                    }
                     const newDoc = await clickHandler(props.item.uniqid);
                     props.updateUserObject(newDoc);
                     }}><Link to=".." >Delete Purchase</Link></button>
