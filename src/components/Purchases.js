@@ -15,7 +15,7 @@ function Purchases(props) {
                         <Link to={`../${item.uniqid}`} key={item.uniqid}>
                             <div className={`dataBox`}>
                                 <span >{item.store}</span>
-                                <span >${item.amount}</span>
+                                <span >${item.amount.toFixed(2)}</span>
                                 <span >{item.date.replaceAll('-','/')}</span>
                             </div>
                         </Link>
