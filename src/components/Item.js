@@ -7,7 +7,7 @@ function Item(props) {
             <div className="container">
                 <h1 className='bold'>{props.item.store}</h1>
                 <div className='purchaseItem'>
-                    <h2 className='medium'>${props.item.amount}</h2>
+                    <h2 className='medium'>${props.item.amount.toFixed(2)}</h2>
                     <h2 className='medium'>{props.item.date.replaceAll('-','/')}</h2>
                 </div>
             </div>
